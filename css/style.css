@@ -2,3 +2,5 @@
 @import url(bootstrap/bootstrap-reboot.css);
 @import url(bootstrap/bootstrap.css);
 @import url(bootstrap/bootstrap-icons.css);
+
+@import "block1.css";
