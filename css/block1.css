@@ -2,3 +2,25 @@
     background-image: url(../img/promo_bg.jpg);
     background-size: cover;
 }
+
+span {
+    color: red;
+}
+
+.title h1 {
+    font-family: 'Russo One', sans-serif;
+}
+.title p {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+.block1 .btn {
+    color: #fff;
+    background-color: red;
+    padding: 12px 40px;
+    transition: .3s;
+}
+
+.block1 .btn:hover {
+    padding: 12px 50px;
+}
