@@ -1,0 +1,63 @@
+.block3{
+    color: white;
+}
+
+.block3 .col-md-4{
+    color: #fff;
+}
+
+.card-body {
+    color: black;
+}
+
+.card-header {
+    background-color: red;
+    color: #fff;
+}
+
+.block3 hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 2px solid #3D3533;
+    margin: 1em 0;
+    padding: 0;
+  }
+
+
+.block3 .col-md-4 ul{
+    text-align: center;
+    margin: 20px 0;
+    color: black;
+}
+
+.block3 .col-md-4 ul li{
+    margin: 20px 0;
+}
+
+.block3 .col-md-4 ul li::before{
+    content: '\2022';
+    color: #9b0b2b;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+.block3 .col-md-4 button{
+    width: 100%;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 14px 0;
+    background: transparent;
+    color: red;
+    font-size: 14px;
+    border-radius: 12px;
+    border: 2px solid red;
+    margin-top: 30px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.block3 .col-md-4 button:hover{
+    background-color: red;
+    color: #fff;
+}
