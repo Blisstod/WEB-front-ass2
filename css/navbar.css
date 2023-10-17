@@ -1,0 +1,26 @@
+.nav {
+    height: 60px;
+    overflow: hidden;
+    transition: 0.2s;
+}
+
+.nav .container {
+    height: 60px;
+}
+
+.nav .toggler {
+    display: none !important;
+}
+
+@media (max-width: 767px) { 
+    .nav .toggler {
+        display: block !important;
+        height: 40px;
+        width: 50px;
+    }
+
+    .nav_expanded {
+        height: 275px;
+    }
+
+}
