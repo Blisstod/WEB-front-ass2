@@ -1,0 +1,19 @@
+.likes {
+    cursor: pointer;
+}
+
+.likes button {
+    color: white;
+    background-color: red;
+    border-radius: 5px;
+    border: 2px solid red;
+}
+
+.likes button:active {
+    box-shadow: 0 5px #6a3838;
+    transform: translateY(4px);
+}
+
+.likes span {
+    color: white;
+}
