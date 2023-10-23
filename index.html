@@ -203,7 +203,8 @@
                                 <hr>
                                 <li>first</li>
                             </ul>
-                            <button class="button my-3">subscribe now</button>
+                            <button id="subscribeButton" class="button my-3">subscribe now</button>
+                            
                         </div>
                     </div>
                 </div>
@@ -229,7 +230,7 @@
                                 <hr>
                                 <li>first</li>
                             </ul>
-                            <button class="button my-3">subscribe now</button>
+                            <button id="subscribeButton" class="button my-3">subscribe now</button>
                         </div>
                     </div>
                 </div>
@@ -245,7 +246,7 @@
                             <ul class="list-unstyled ">
                                 <li>07:00 - 00:00</li>
                                 <hr>
-                                <li>Unlimited number of visits</li>
+                                <li>Unlimited number of visits</li> 
                                 <hr>
                                 <li>Everyday</li>
                                 <hr>
@@ -255,13 +256,45 @@
                                 <hr>
                                 <li>first</li>
                             </ul>
-                            <button class="button my-3">subscribe now</button>
+                            <button id="subscribeButton" class="button my-3">subscribe now</button>
                         </div>
                     </div>
                 </div>
+                
             </div>
         </div>
     </div>
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close" id="closePopup">&times;</span>
+            <h2>Subscribe Form</h2>
+            <form id="popupForm" action = "/">
+                <div class = "form-element">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone">
+                    <div class = "error"></div>
+                </div>
+                <div class = "form-element">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email">
+                    <div class = "error"></div>       
+                </div>            
+                <div class = "form-element">
+                    <label for="cardNumber">Card Number</label>
+                    <input type="text" id="cardNumber" name="cardNumber">
+                    <div class = "error"></div>
+                </div>
+                <div class = "form-element">
+                    <label for="cvv">CVV</label>
+                    <input type="text" id="cvv" name="cvv">
+                    <div class = "error"></div>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <div id="overlay" class="overlay"></div>
     
 
     <footer id="contacts"
@@ -303,5 +336,6 @@
     
       <script src="js/bootstrap.js"></script>
       <script src="js/ernur.js"></script>
+      <script defer src="js/formvalidation.js"></script>
 </body>
 </html>
