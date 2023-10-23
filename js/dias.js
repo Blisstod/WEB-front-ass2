@@ -1,3 +1,5 @@
+let likeSound = new Audio("sounds/lightweight_baby.mp3")
+
 likeButton1 = document.getElementById("likeButton1")
 likeCounter1 = document.getElementById("likeCounter1")
 let counter1 = 0
@@ -7,6 +9,7 @@ likeButton1.addEventListener('click', () => {
         isLiked1 = true
         counter1++
         likeCounter1.innerText = counter1
+        likeSound.play()
     } else {
         isLiked1 = false
         counter1--
@@ -23,6 +26,7 @@ likeButton2.addEventListener('click', () => {
         isLiked2 = true
         counter2++
         likeCounter2.innerText = counter2
+        likeSound.play()
     } else {
         isLiked2 = false
         counter2--
@@ -39,6 +43,7 @@ likeButton3.addEventListener('click', () => {
         isLiked3 = true
         counter3++
         likeCounter3.innerText = counter3
+        likeSound.play()
     } else {
         isLiked3 = false
         counter3--
@@ -55,6 +60,7 @@ likeButton4.addEventListener('click', () => {
         isLiked4 = true
         counter4++
         likeCounter4.innerText = counter4
+        likeSound.play()
     } else {
         isLiked4 = false
         counter4--
