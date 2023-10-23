@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const subscribeButtons = document.querySelectorAll('.button'); // Select all buttons with the "button" class
+    const subscribeButtons = document.querySelectorAll('.block3 .button'); // Select all buttons with the "button" class
     const popup = document.getElementById('popup');
     const closeButton = document.getElementById('closePopup');
     const overlay = document.getElementById('overlay');
@@ -37,7 +37,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (phoneInput === '') {
             setError(phone, 'Phone number is required!');
-        } else {
+        } else if (phoneInput.length != 11 || !/^\d{11}$/.test(phoneInput))
+            setError(phone, 'Phone number should be 11 characters, containing only digits!')
+        else {
             setSuccess(phone);
         }
 
