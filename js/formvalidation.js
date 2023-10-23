@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     const validateInputs = () => {
+        let counter = 0;
         const phoneInput = phone.value.trim();
         const emailInput = email.value.trim();
         const cardNumberInput = cardNumber.value.trim();
@@ -40,6 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
         } else if (phoneInput.length != 11 || !/^\d{11}$/.test(phoneInput))
             setError(phone, 'Phone number should be 11 characters, containing only digits!')
         else {
+            counter++;
             setSuccess(phone);
         }
 
@@ -48,6 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
         } else if (!isValidEmail(emailInput)) {
             setError(email, 'Provide a valid email!');
         } else {
+            counter++;
             setSuccess(email);
         }
 
@@ -56,6 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
         } else if (cardNumberInput.length !== 16 || !/^\d{16}$/.test(cardNumberInput)) {
             setError(cardNumber, 'Card Number should be 16 characters, containing only digits!');
         } else {
+            counter++;
             setSuccess(cardNumber);
         }
 
@@ -64,8 +68,12 @@ document.addEventListener('DOMContentLoaded', function () {
         } else if (cvvInput.length !== 3 || !/^\d{3}$/.test(cvvInput)) {
             setError(cvv, 'CVV should be 3 characters, containing only digits!');
         } else {
+            counter++;
             setSuccess(cvv);
         }
+
+        if (counter == 4)
+            alert("You bought abonement successfully!");
     }
 
     function isValidEmail(email) {
