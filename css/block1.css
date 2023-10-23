@@ -24,3 +24,42 @@ span {
 .block1 .btn:hover {
     padding: 12px 50px;
 }
+
+.carousel {
+    position: relative;
+}
+
+.carousel_item {
+    display: none;
+}
+
+.carousel_item img {
+    height: 100vh;
+    width: 100%;
+}
+.carousel_item_selected {
+    display: block;
+}
+
+.carousel_nav {
+    width: 100%;
+    padding: 20px 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+}
+
+.carousel_button {
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}   
+
+.carousel_button_selected {
+    background: rgba(255, 255, 255, 0.5);
+}

@@ -85,7 +85,7 @@
                 col-lg-4 ms-lg-3
                 col-md-4 ms-md-3
                 col-sm-6 ms-sm-3
-                col-8 offset-0 ms-3" href="">get started</a>
+                col-8 offset-0 ms-3" >get started</a>
             </div>
         </div>
     </div>
@@ -94,43 +94,10 @@
       <h1 class="banner text-white text-uppercase text-center">Meet our fitness clubs</h1>
     </div>
 
-    <div id="" class="carousel slide z-1">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-      </div>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="img/place1.jpeg" class="d-block w-100" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h1>Avenue Qabanbay Batyr</h1>
-            <p>Some representative placeholder content for the first slide.</p>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="img/place2.jpeg" class="d-block w-100" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h1>Kenesary Koshesi</h1>
-            <p>Some representative placeholder content for the second slide.</p>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="img/place3.jpeg" class="d-block w-100" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h1>A. Kekilbayuly Koshesi</h1>
-            <p>Some representative placeholder content for the third slide.</p>
-          </div>
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
+    <div class="carousel">
+        <div class="carousel_item"><img src="./img/place1.jpeg" alt=""></div>
+        <div class="carousel_item"><img src="./img/place2.jpeg" alt=""></div>
+        <div class="carousel_item"><img src="./img/place3.jpeg" alt=""></div>
     </div>
 
     <div id="trainers" class="container-fluid bg-dark text-light pt-5">
@@ -219,7 +186,8 @@
                                 <hr>
                                 <li>first</li>
                             </ul>
-                            <button class="button my-3">subscribe now</button>
+                            <button id="subscribeButton" class="button my-3">subscribe now</button>
+                            
                         </div>
                     </div>
                 </div>
@@ -245,7 +213,7 @@
                                 <hr>
                                 <li>first</li>
                             </ul>
-                            <button class="button my-3">subscribe now</button>
+                            <button id="subscribeButton" class="button my-3">subscribe now</button>
                         </div>
                     </div>
                 </div>
@@ -261,7 +229,7 @@
                             <ul class="list-unstyled ">
                                 <li>07:00 - 00:00</li>
                                 <hr>
-                                <li>Unlimited number of visits</li>
+                                <li>Unlimited number of visits</li> 
                                 <hr>
                                 <li>Everyday</li>
                                 <hr>
@@ -271,13 +239,45 @@
                                 <hr>
                                 <li>first</li>
                             </ul>
-                            <button class="button my-3">subscribe now</button>
+                            <button id="subscribeButton" class="button my-3">subscribe now</button>
                         </div>
                     </div>
                 </div>
+                
             </div>
         </div>
     </div>
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close" id="closePopup">&times;</span>
+            <h2>Subscribe Form</h2>
+            <form id="popupForm" action = "/">
+                <div class = "form-element">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone">
+                    <div class = "error"></div>
+                </div>
+                <div class = "form-element">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email">
+                    <div class = "error"></div>       
+                </div>            
+                <div class = "form-element">
+                    <label for="cardNumber">Card Number</label>
+                    <input type="text" id="cardNumber" name="cardNumber">
+                    <div class = "error"></div>
+                </div>
+                <div class = "form-element">
+                    <label for="cvv">CVV</label>
+                    <input type="text" id="cvv" name="cvv">
+                    <div class = "error"></div>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <div id="overlay" class="overlay"></div>
     
 
     <footer id="contacts"
@@ -318,7 +318,10 @@
     </footer>
 
       <script src="js/bootstrap.js"></script>
-      <script src="js/ernur.js"></script>
+      <script src="js/azat.js"></script>
       <script src="js/dias.js"></script>
+      <script src="js/ernur.js"></script>
+      <script defer src="js/formvalidation.js"></script>
+
 </body>
 </html>
