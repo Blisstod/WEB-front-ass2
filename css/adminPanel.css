@@ -1,0 +1,67 @@
+/* button to open admin panel ================== */
+
+#admin {
+    width: 50px;
+    height: 50px;
+    background-color: brown;
+}
+
+/* admin panel ================================= */
+
+.adminPanel {
+    padding: 30px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    background-color: #fff;
+}
+
+.adminPanel .adminPanel__header {
+    position: relative;
+}
+
+.adminPanel button.btn-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.adminPanel button.edit-btn, .adminPanel button.delete-btn {
+    display: flex;
+    justify-content: center;
+    height: 10px;
+    width: 80px;
+    font-size: 18px;
+    line-height: 1px;
+
+}
+
+.adminPanel .overlay {
+    display: block;
+}
+
+
+/* user list table ============================= */
+
+#usersList {
+    margin-top: 20px;
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #ddd;
+    font-size: 18px;
+}
+
+#usersList th, #usersList td {
+    text-align: center;
+    padding: 12px;
+}
+
+#usersList tr {
+    border-bottom: 1px solid #ddd;
+}
+
+#usersList tr.header, #usersList tr:hover {
+    background-color: #f1f1f1;
+}
