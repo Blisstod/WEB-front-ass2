@@ -35,6 +35,11 @@ h2{
     text-align: center;
 }
 
+#result {
+    color: red;
+    text-align: center;
+}
+
 .inputbox{
     position: relative;
     margin: 30px;
@@ -53,11 +58,6 @@ h2{
     transition: .5s;
 }
 
-input:focus ~ label,
-input:valid ~ label{
-    top: -5px;
-    color: red;
-}
 
 .inputbox input{
     width: 100%;
@@ -76,6 +76,10 @@ input:valid ~ label{
     color: #fff;
     top: 20px;
     font-size: 1.2em;
+}
+
+.inputbox ::placeholder {
+    color: #c1c1c1;
 }
 
 .forget{
@@ -127,7 +131,3 @@ button{
 .register p a:hover{
     text-decoration: underline;
 }
-
-
-
-
