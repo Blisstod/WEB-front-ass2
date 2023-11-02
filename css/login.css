@@ -35,6 +35,13 @@ h2{
     text-align: center;
 }
 
+#result {
+    color: red;
+    text-align: center;
+    margin: 15px 0 15px 0;
+    text-transform: uppercase;
+}
+
 .inputbox{
     position: relative;
     margin: 30px;

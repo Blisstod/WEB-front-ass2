@@ -11,15 +11,15 @@ login.addEventListener('click', function(event) {
         user = JSON.parse(user)
         let userPass = user['password']
         if (password == "") {
-            alert("type your password")
+            document.getElementById("result").innerHTML="Type your password"
         } else if (password == userPass){
             alert("Logged in")
             window.location.href = "./index.html";
         } else {
-            alert("Password incorrect")
+            document.getElementById("result").innerHTML="Incorrect password"
         }
     } else {
-        alert("Please, register")
+        document.getElementById("result").innerHTML="Please, register"
     }
 })
 
