@@ -10,11 +10,14 @@ register.addEventListener('click', function(event) {
 
     let isValid = true
 
-    if (username=="") {
+    if (username=="" && email=="" && password=="" && confirmPassword=="") {
+        document.getElementById("result").innerHTML="Fill out the fields"
+        isValid=false
+    } else if (username=="") {
         document.getElementById("result").innerHTML="Enter username";
         isValid = false
     } else if (username.length < 6) {
-        document.getElementById("result").innerHTML="At least 6 character";
+        document.getElementById("result").innerHTML="Username must be at least 6 character";
         isValid = false
     } else if (email=="") {
         document.getElementById("result").innerHTML="Enter email";
@@ -31,6 +34,9 @@ register.addEventListener('click', function(event) {
     } else if (password!==confirmPassword) {
         document.getElementById("result").innerHTML="Password doesn't match";
         isValid = false
+    } else if (username in localStorage) {
+        document.getElementById("result").innerHTML="Username is already taken"
+        isValid=false
     }
     
     let user = {
