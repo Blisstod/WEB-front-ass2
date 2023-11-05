@@ -18,7 +18,12 @@ login.addEventListener('click', function(event) {
         if (password == "") {
             document.getElementById("result").innerHTML="Type your password"
         } else if (password == userPass){
-            alert("Logged in")
+            // alert("Logged in")
+            let loggedIn = {
+                'loggedIn': true,
+                'username': username
+            }
+            localStorage.setItem('loggedIn', JSON.stringify(loggedIn))
             window.location.href = "./index.html";
         } else {
             document.getElementById("result").innerHTML="Incorrect password"
