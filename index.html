@@ -27,6 +27,7 @@
             offset-xl-1 col-xl-1
             offset-xxl-1 col-xxl-1"
             href="#"><img class="img-fluid" src="icons/gym_logo.png" alt=""></a>
+            
             <div 
             class="h-100 nav-links
             offset-md-0 col-md-10 mt-md-0
@@ -66,9 +67,17 @@
                     <li 
                     class="nav-item
                     my-2">
-                    <a 
+                    <a id = "Basket"
                     class="text-light text-decoration-none d-block w-100 fs-3" 
                     href="./login.html">Log in</a>
+                    </li>
+
+                    <li 
+                    class="nav-item
+                    my-2">
+                    <a 
+                    class="text-light text-decoration-none d-block w-100 fs-3" 
+                    href="./basket.html">Basket</a>
                     </li>
                 </ul>
             </div>
@@ -167,10 +176,10 @@
                 <div class="col-md-4 my-3">
                     <div class="card text-center border-0">
                         <div class="card-header py-4">
-                            <h2 class="card-title">BASIC PLAN</h2>
+                            <h2 class="card-title text-uppercase">Basic Plan</h2>
                         </div>
                         <div class="card-body">
-                            <h4 class="card-subtitle mb-2 fst-italic fw-bold display-6 mt-2">$19</h4>
+                            <h4 class="card-subtitle mb-2 fst-italic fw-bold display-6 mt-2">$19.99</h4>
                             <p class="card-text text-muted mb-4">per month</p>
                             <ul class="list-unstyled">
                                 <li>07:00 - 22:00</li>
@@ -185,7 +194,7 @@
                                 <hr>
                                 <li>first</li>
                             </ul>
-                            <button id="subscribeButton" class="button my-3">subscribe now</button>
+                            <button onclick="addToBasket('Basic Plan', 19.99)" id="addToBasket" class="button my-3">Add to Basket</button>
                             
                         </div>
                     </div>
@@ -194,10 +203,10 @@
                 <div class="col-md-4 my-3">
                     <div class="card text-center border-0">
                         <div class="card-header py-4">
-                            <h2 class="card-title">SPORTSMAN PLAN</h2>
+                            <h2 class="card-title text-uppercase">Sportsman Plan</h2>
                         </div>
                         <div class="card-body">
-                            <h4 class="card-subtitle mb-2 fst-italic fw-bold  display-6  mt-2">$29</h4>
+                            <h4 class="card-subtitle mb-2 fst-italic fw-bold  display-6  mt-2">$29.99</h4>
                             <p class="card-text text-muted mb-4">per month</p>
                             <ul class="list-unstyled">
                                 <li>07:00 - 00:00</li>
@@ -212,7 +221,7 @@
                                 <hr>
                                 <li>first</li>
                             </ul>
-                            <button id="subscribeButton" class="button my-3">subscribe now</button>
+                            <button onclick="addToBasket('Sportsman Plan', 29.99)" id="addToBasket" class="button my-3">Add to Basket</button>
                         </div>
                     </div>
                 </div>
@@ -220,10 +229,10 @@
                 <div class="col-md-4 my-3">
                     <div class="card text-center border-0">
                         <div class="card-header py-4">
-                            <h2 class="card-title">PROFESSIONAL PLAN</h2>
+                            <h2 class="card-title text-uppercase">Professional Plan</h2>
                         </div>
                         <div class="card-body">
-                            <h4 class="card-subtitle mb-2 fst-italic fw-bold display-6 mt-2">$49</h4>
+                            <h4 class="card-subtitle mb-2 fst-italic fw-bold display-6 mt-2">$49.99</h4>
                             <p class="card-text text-muted mb-4">per month</p>
                             <ul class="list-unstyled ">
                                 <li>07:00 - 00:00</li>
@@ -238,7 +247,7 @@
                                 <hr>
                                 <li>first</li>
                             </ul>
-                            <button id="subscribeButton" class="button my-3">subscribe now</button>
+                            <button onclick="addToBasket('Professional Plan', 49.99)" id="addToBasket" class="button my-3">Add to Basket</button>
                         </div>
                     </div>
                 </div>
@@ -246,6 +255,19 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function addToBasket(planName, price) {
+            const item = `${planName}-${price}`;
+            const currentBasket = localStorage.getItem('basket') || "";
+            localStorage.setItem('basket', currentBasket ? `${currentBasket},${item}` : item);
+            alert(`${planName} added to basket`);
+        }
+    </script>
+    
+    
+
+    <!-- subscribeButton -->
 
     <div id="popup" class="popup">
         <div class="popup-content">
@@ -318,7 +340,6 @@
     <script src="js/azat.js"></script>
     <script src="js/dias.js"></script>
     <script src="js/ernur.js"></script>
-    <script defer src="js/formvalidation.js"></script>
 
 </body>
 </html>

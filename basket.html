@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basket</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/basket.css">
+</head>
+<body class="basket-body bg-dark">
+
+    <div class="basket-container py-5 px-5">
+        <div class = "basket-header d-flex justify-content-between">
+            <h1 class="basket-title">Your basket</h1>
+            <a href="#" onclick="removeAll()" class = "remove-all text-danger">Remove all</a>
+        </div>
+        <ul id="basket-list" class="list-group mt-5">
+            
+        </ul>
+        <hr>
+        <div class="d-flex align-items-end flex-column">
+            <h4>Total: $<span id="total">0</span></h4>
+            <button id="checkoutButton" class="btn btn-primary">Checkout</button>
+        </div>
+    </div>
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close" id="closePopup">&times;</span>
+            <h2>Subscribe Form</h2>
+            <form id="popupForm" action = "/">
+                <div class = "form-element">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone">
+                    <div class = "error"></div>
+                </div>
+                <div class = "form-element">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email">
+                    <div class = "error"></div>       
+                </div>            
+                <div class = "form-element">
+                    <label for="cardNumber">Card Number</label>
+                    <input type="text" id="cardNumber" name="cardNumber">
+                    <div class = "error"></div>
+                </div>
+                <div class = "form-element">
+                    <label for="cvv">CVV</label>
+                    <input type="text" id="cvv" name="cvv">
+                    <div class = "error"></div>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <div id="overlay" class="overlay"></div>
+
+    <script src = "js/basket.js"></script>
+    <script src="js/formvalidation.js"></script>
+
+</body>
+</html>
