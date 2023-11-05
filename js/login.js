@@ -6,6 +6,11 @@ login.addEventListener('click', function(event) {
     const username = document.getElementById("logUsername").value
     const password = document.getElementById("logPassword").value
 
+    if (username == 'admin' && password == 'admin') {
+        window.location.href = '/adminPanel.html'
+        return
+    }
+
     if (username in localStorage) {
         let user = localStorage.getItem(username)
         user = JSON.parse(user)
