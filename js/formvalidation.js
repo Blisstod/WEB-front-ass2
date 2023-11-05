@@ -1,17 +1,16 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const subscribeButtons = document.querySelectorAll('.block3 .button'); // Select all buttons with the "button" class
+    const checkoutButton = document.getElementById('checkoutButton'); // Select all buttons with the "button" class
     const popup = document.getElementById('popup');
     const closeButton = document.getElementById('closePopup');
     const overlay = document.getElementById('overlay');
     const popupForm = document.getElementById('popupForm');
 
-    // Add event listeners to each "subscribe now" button
-    subscribeButtons.forEach(function (button) {
-        button.addEventListener('click', function () {
+    if (checkoutButton) {
+        checkoutButton.addEventListener('click', function () {
             popup.style.display = 'block';
             overlay.style.display = 'block';
         });
-    });
+    }
 
     closeButton.addEventListener('click', function () {
         popup.style.display = 'none';

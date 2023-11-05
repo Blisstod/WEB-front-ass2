@@ -12,19 +12,21 @@
             <div class="form-value">
                 <form action="">
                     <h2>Login</h2>
+                    <p id="result"></p>
                     <div class="inputbox">
-                        <input type="text"required>
-                        <label for="">Username</label>
+                        <ion-icon name="person-outline"></ion-icon>
+                        <input id="logUsername" type="text" placeholder="username" required minlength="4" maxlength="16">
+                        <label id="logUsername" for="logUsername"></label>
                     </div>
                     <div class="inputbox">
-                        <ion-icon name="lock-closed-outline"></ion-icon>
-                        <input type="password" required>
-                        <label for="">Password</label> 
+                        <ion-icon id="eyeicon" name="eye-off-outline"></ion-icon>
+                        <input id="logPassword" type="password" placeholder="password" required minlength="4" maxlength="16">
+                        <label id="logPassword" for="logPassword"></label> 
                     </div>
                     <div class="forget">
                         <label for=""><input type="checkbox">Remember me</label>
                     </div>
-                    <button id="login">Log in</button>
+                    <button type="submit" id="loginBtn">Log in</button>
                     <div class="register">
                         <p>Don't have an account? <a href="./registration.html">Register</a></p>
                     </div>
@@ -32,6 +34,7 @@
             </div>
         </div>
     </section>
+    <script src="./js/login.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>

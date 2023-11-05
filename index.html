@@ -8,7 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Yanone+Kaffeesatz:wght@300&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
-
 <body>
   <nav class="nav bg-black fixed-top z-2 p-0">
     <div class="container">
@@ -28,6 +27,7 @@
             offset-xl-1 col-xl-1
             offset-xxl-1 col-xxl-1"
             href="#"><img class="img-fluid" src="icons/gym_logo.png" alt=""></a>
+            
             <div 
             class="h-100 nav-links
             offset-md-0 col-md-10 mt-md-0
@@ -67,9 +67,17 @@
                     <li 
                     class="nav-item
                     my-2">
+                    <a id = "Basket"
+                    class="login_btn text-light text-decoration-none d-block w-100 fs-3" 
+                    href="./login.html">Log in</a>
+                    </li>
+
+                    <li 
+                    class="nav-item
+                    my-2">
                     <a 
                     class="text-light text-decoration-none d-block w-100 fs-3" 
-                    href="./login.html">Log in</a>
+                    href="./basket.html">Basket</a>
                     </li>
                 </ul>
             </div>
@@ -85,13 +93,10 @@
                 <p class="h2 text-uppercase text-white fw-bold ps-1
                 offset-xxl-0 ms-xxl-0
                 offset-xl-0 ms-xl-0">it is time to get stronger</p>
-                <a class="btn mt-5 text-uppercase fw-bold" >get started</a>
+                <a class="btn mt-5 text-uppercase fw-bold col-6 col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-4" >get started</a>
             </div>
         </div>
     </div>
-
-    <div id="admin"></div>
-
 
     <div id="carouselExampleCaptions" class="bg-dark py-xxl-5 py-xl-4 py-lg-3 py-md-2 py-sm-1 py-1">
       <h1 class="banner text-white text-uppercase text-center fs-1">Meet our fitness clubs</h1>
@@ -172,10 +177,10 @@
                 <div class="col-md-4 my-3">
                     <div class="card text-center border-0">
                         <div class="card-header py-4">
-                            <h2 class="card-title">BASIC PLAN</h2>
+                            <h2 class="card-title text-uppercase">Basic Plan</h2>
                         </div>
                         <div class="card-body">
-                            <h4 class="card-subtitle mb-2 fst-italic fw-bold display-6 mt-2">$19</h4>
+                            <h4 class="card-subtitle mb-2 fst-italic fw-bold display-6 mt-2">$19.99</h4>
                             <p class="card-text text-muted mb-4">per month</p>
                             <ul class="list-unstyled">
                                 <li>07:00 - 22:00</li>
@@ -190,7 +195,7 @@
                                 <hr>
                                 <li>first</li>
                             </ul>
-                            <button id="subscribeButton" class="button my-3">subscribe now</button>
+                            <button onclick="addToBasket('Basic Plan', 19.99)" id="addToBasket" class="button my-3">Add to Basket</button>
                             
                         </div>
                     </div>
@@ -199,10 +204,10 @@
                 <div class="col-md-4 my-3">
                     <div class="card text-center border-0">
                         <div class="card-header py-4">
-                            <h2 class="card-title">SPORTSMAN PLAN</h2>
+                            <h2 class="card-title text-uppercase">Sportsman Plan</h2>
                         </div>
                         <div class="card-body">
-                            <h4 class="card-subtitle mb-2 fst-italic fw-bold  display-6  mt-2">$29</h4>
+                            <h4 class="card-subtitle mb-2 fst-italic fw-bold  display-6  mt-2">$29.99</h4>
                             <p class="card-text text-muted mb-4">per month</p>
                             <ul class="list-unstyled">
                                 <li>07:00 - 00:00</li>
@@ -217,7 +222,7 @@
                                 <hr>
                                 <li>first</li>
                             </ul>
-                            <button id="subscribeButton" class="button my-3">subscribe now</button>
+                            <button onclick="addToBasket('Sportsman Plan', 29.99)" id="addToBasket" class="button my-3">Add to Basket</button>
                         </div>
                     </div>
                 </div>
@@ -225,10 +230,10 @@
                 <div class="col-md-4 my-3">
                     <div class="card text-center border-0">
                         <div class="card-header py-4">
-                            <h2 class="card-title">PROFESSIONAL PLAN</h2>
+                            <h2 class="card-title text-uppercase">Professional Plan</h2>
                         </div>
                         <div class="card-body">
-                            <h4 class="card-subtitle mb-2 fst-italic fw-bold display-6 mt-2">$49</h4>
+                            <h4 class="card-subtitle mb-2 fst-italic fw-bold display-6 mt-2">$49.99</h4>
                             <p class="card-text text-muted mb-4">per month</p>
                             <ul class="list-unstyled ">
                                 <li>07:00 - 00:00</li>
@@ -243,7 +248,7 @@
                                 <hr>
                                 <li>first</li>
                             </ul>
-                            <button id="subscribeButton" class="button my-3">subscribe now</button>
+                            <button onclick="addToBasket('Professional Plan', 49.99)" id="addToBasket" class="button my-3">Add to Basket</button>
                         </div>
                     </div>
                 </div>
@@ -251,6 +256,19 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function addToBasket(planName, price) {
+            const item = `${planName}-${price}`;
+            const currentBasket = localStorage.getItem('basket') || "";
+            localStorage.setItem('basket', currentBasket ? `${currentBasket},${item}` : item);
+            alert(`${planName} added to basket`);
+        }
+    </script>
+    
+    
+
+    <!-- subscribeButton -->
 
     <div id="popup" class="popup">
         <div class="popup-content">
@@ -324,56 +342,6 @@
     <script src="js/azat.js"></script>
     <script src="js/dias.js"></script>
     <script src="js/ernur.js"></script>
-    <script defer src="js/formvalidation.js"></script>
-    <script type="module" src="/js/adminPanel.js"></script>
-    
-<!--     
-    <section class="adminPanel">
-        <div class="container">
-            <div class="adminPanel__header">
-                <h1>Admin panel</h1>
-                <button type="button" class="btn-close" aria-label="Close"></button>
-            </div>
-            <table id="usersList">
-                <tr class="header">
-                    <th>Login</th>
-                    <th>Password</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th></th>
-                </tr>
-            </table>
-        </div>
-
-        <div class="overlay pt-5">
-
-            <div class="card w-25 mx-auto">
-                <div class="card-body">
-                    <form id="updateUserForm">
-                        <button type="button" class="btn-close btn-form-close" aria-label="Close"></button>
-
-                        <h2 class="fs-5 mb-3">User login: </h2>
-                        <div class="mb-3">
-                            <label class="form-label">Password</label>
-                            <input type="text" class="form-control" id="userPassword" placeholder="test">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Name</label>
-                            <input type="text" class="form-control" id="userPassword" placeholder="test">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Email</label>
-                            <input type="text" class="form-control" id="userPassword" placeholder="test">
-                        </div>
-
-                        <button type="submit" class="btn btn-secondary">Submit</button>
-                    </form>
-
-
-                </div>
-              </div>
-        </div>
-    </section> -->
 
 </body>
 </html>
