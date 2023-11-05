@@ -1,35 +1,30 @@
-const carousels = document.querySelectorAll(".carousel");
+$(document).ready(function () {
+    $(".carousel").each(function () {
+        const $carousel = $(this);
+        const $items = $carousel.find(".carousel_item");
+        let buttonsHTML = $items.map(function () {
+            return '<span class="carousel_button"></span>';
+        }).get().join("");
 
-for (let carouselIndex = 0; carouselIndex < carousels.length; carouselIndex++) {
-    const carousel = carousels[carouselIndex];
-    const items = carousel.querySelectorAll(".carousel_item");
-    const buttonsHTML = Array.from(items, () => {
-        return `<span class="carousel_button"></span>`;
-    });
+        $carousel.append(`
+            <div class="carousel_nav">
+                ${buttonsHTML}
+            </div>
+        `);
 
-    carousel.insertAdjacentHTML("beforeend", `
-        <div class="carousel_nav">
-            ${buttonsHTML.join("")}
-        </div>
-    `);
+        const $buttons = $carousel.find(".carousel_button");
 
-    const buttons = carousel.querySelectorAll(".carousel_button");
+        $buttons.each(function (buttonIndex) {
+            $(this).on('click', function () {
+                $items.removeClass("carousel_item_selected");
+                $buttons.removeClass("carousel_button_selected");
 
-    for (let buttonIndex = 0; buttonIndex < buttons.length; buttonIndex++) {
-        const button = buttons[buttonIndex];
-        button.addEventListener('click', () => {
-            for (let itemIndex = 0; itemIndex < items.length; itemIndex++) {
-                items[itemIndex].classList.remove("carousel_item_selected");
-            }
-            for (let buttonIndex = 0; buttonIndex < buttons.length; buttonIndex++) {
-                buttons[buttonIndex].classList.remove("carousel_button_selected");
-            }
-
-            items[buttonIndex].classList.add("carousel_item_selected");
-            button.classList.add("carousel_button_selected");
+                $items.eq(buttonIndex).addClass("carousel_item_selected");
+                $(this).addClass("carousel_button_selected");
+            });
         });
-    }
-
-    items[0].classList.add("carousel_item_selected");
-    buttons[0].classList.add("carousel_button_selected");
-}
+        
+        $items.first().addClass("carousel_item_selected");
+        $buttons.first().addClass("carousel_button_selected");
+    });
+});
