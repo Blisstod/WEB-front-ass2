@@ -27,7 +27,7 @@ function updateBasketDisplay() {
 function removeAll(){
 	localStorage.removeItem('basket');
 	updateBasketDisplay();
-}
+}	
 
 function removeFromBasket(index) {
 	let basket = (localStorage.getItem('basket') || "").split(',');
