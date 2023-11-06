@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
             popup.style.display = 'block';
             overlay.style.display = 'block';
         });
-    }
+    } 
 
     closeButton.addEventListener('click', function () {
         popup.style.display = 'none';

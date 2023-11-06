@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basket</title>
+    <title>Basket</title>    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/basket.css">
 </head>
@@ -11,6 +12,7 @@
 
     <div class="basket-container py-5 px-5">
         <div class = "basket-header d-flex justify-content-between">
+            <button id="closeButton" class="close-button"></button>
             <h1 class="basket-title">Your basket</h1>
             <a href="#" onclick="removeAll()" class = "remove-all text-danger">Remove all</a>
         </div>
@@ -55,7 +57,7 @@
     </div>
     <div id="overlay" class="overlay"></div>
 
-    <script src = "js/basket.js"></script>
+    <script src ="js/basket.js"></script>
     <script src="js/formvalidation.js"></script>
 
 </body>
