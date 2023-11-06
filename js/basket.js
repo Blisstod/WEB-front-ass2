@@ -46,3 +46,7 @@ document.getElementById('checkoutButton').addEventListener('click', () => {
 });
 
 updateBasketDisplay();
+
+$('#closeButton').on('click', function() {
+    window.location.href = 'index.html';
+});
