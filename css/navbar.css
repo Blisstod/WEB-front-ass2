@@ -7,6 +7,9 @@
 .nav .container {
     height: 60px;
 }
+.nav .container img {
+    width: 45px;
+}
 
 .nav .toggler {
     display: none !important;
