@@ -10,6 +10,9 @@ register.addEventListener('click', function(event) {
 
     let isValid = true
 
+    var passRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*#?&.])[A-Za-z\d@$!%*#?&.]{8,16}$/;
+    var emailRegex = /^[a-zA-Z0-9.-_]+@[a-z]+\.[a-z]{2,6}$/;
+
     if (username=="" && email=="" && password=="" && confirmPassword=="") {
         document.getElementById("result").innerHTML="Fill out the fields"
         isValid=false
@@ -22,19 +25,25 @@ register.addEventListener('click', function(event) {
     } else if (email=="") {
         document.getElementById("result").innerHTML="Enter email";
         isValid = false
-    } else if (password=="") {
+    } else if (!emailRegex.test(email)) {
+        document.getElementById("result").innerHTML="Enter a valid email address";
+        isValid = false;
+    }  else if (password=="") {
         document.getElementById("result").innerHTML="Enter password";
         isValid = false
-    } else if (password.length < 4) {
-        document.getElementById("result").innerHTML="Password must be at least 4 characters";
+    } else if (password.length < 8) {
+        document.getElementById("result").innerHTML="Password must be at least 8 characters";
+        isValid = false
+    } else if (!passRegex.test(password)) {
+        document.getElementById("result").innerHTML="Enter a valid password address";
         isValid = false
     } else if (confirmPassword=="") {
-        document.getElementById("result").innerHTML="Confirm password   ";
+        document.getElementById("result").innerHTML="Confirm password";
         isValid = false
     } else if (password!==confirmPassword) {
         document.getElementById("result").innerHTML="Password doesn't match";
         isValid = false
-    } else if (username in localStorage) {
+    } else if (localStorage.getItem(username)) {
         document.getElementById("result").innerHTML="Username is already taken"
         isValid=false
     }
