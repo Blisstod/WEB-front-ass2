@@ -7,7 +7,7 @@ login.addEventListener('click', function(event) {
     const password = document.getElementById("logPassword").value
 
     if (username == 'admin' && password == 'admin') {
-        window.location.href = '/adminPanel.html'
+        window.location.href = './adminPanel.html'
         return
     }
 

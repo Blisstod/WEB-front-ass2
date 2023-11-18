@@ -36,6 +36,9 @@ function listUsers() {
 
     for(let i = 0; i < localStorage.length; i++) {
         let key = localStorage.key(i);
+        if (key === "basket") {
+            continue
+        }
         let user = JSON.parse(localStorage.getItem(key))
 
         if (!isUser(user)) {
@@ -133,6 +136,6 @@ $(document).ready(function () {
     // going to main page
     $('.adminPanel button.btn-close').click(function (e) { 
         e.preventDefault();
-        window.location.href = '/index.html'
+        window.location.href = './index.html'
     });
 });

@@ -6,8 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     let user = localStorage.getItem('loggedIn');
-    user = JSON.parse(user);
-    if (user['loggedIn']) {
-        $('.nav .login_btn').text(user['username']);
+    if (user !== null) {
+        user = JSON.parse(user);
+        if (user['loggedIn']) {
+            $('.nav .login_btn').text(user['username']);
+        }
     }
 });
