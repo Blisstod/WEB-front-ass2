@@ -11,8 +11,7 @@ register.addEventListener('click', function(event) {
     let isValid = true
 
     var passRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*#?&.])[A-Za-z\d@$!%*#?&.]{8,16}$/;
-    var emailRegex = /^[a-zA-Z0-9.-_]+@[a-z]+\.[a-z]{2,6}$/;
-
+    var emailRegex = /^(?=.{8,16}@)[a-zA-Z0-9]+[.]?[a-zA-Z0-9]+[_]?@[a-z]+\.[a-z]{2,6}$/;
     if (username=="" && email=="" && password=="" && confirmPassword=="") {
         document.getElementById("result").innerHTML="Fill out the fields"
         isValid=false
@@ -39,7 +38,7 @@ register.addEventListener('click', function(event) {
         isValid = false
     } else if (confirmPassword=="") {
         document.getElementById("result").innerHTML="Confirm password";
-        isValid = false
+        isValid = false 
     } else if (password!==confirmPassword) {
         document.getElementById("result").innerHTML="Password doesn't match";
         isValid = false
