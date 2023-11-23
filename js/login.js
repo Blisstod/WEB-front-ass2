@@ -9,14 +9,27 @@ login.addEventListener('click', function(event) {
     if (username == 'admin' && password == 'admin') {
         window.location.href = './adminPanel.html'
         return
+    } 
+    if (username=="") {
+        document.getElementById("errorUsername").innerHTML = "Username is required";
+        document.getElementById("errorUsername").style.color="red";
+        document.getElementById("logUsername").style.borderColor = "red";
     }
-
+    if (password == ""){
+        document.getElementById("errorPass").innerHTML = "Password is required";
+        document.getElementById("errorPass").style.color="red";
+        document.getElementById("logPassword").style.borderColor = "red";
+    }
     if (username in localStorage) {
         let user = localStorage.getItem(username)
         user = JSON.parse(user)
         let userPass = user['password']
+        document.getElementById("logUsername").style.borderColor = "greenyellow";
+        document.getElementById("errorUsername").innerHTML = "";
         if (password == "") {
-            document.getElementById("result").innerHTML="Type your password"
+            document.getElementById("errorPass").innerHTML="Type your password";
+            document.getElementById("errorPass").style.color="red";
+            document.getElementById("logPassword").style.borderColor = "red";
         } else if (password == userPass){
             // alert("Logged in")
             let loggedIn = {
@@ -26,12 +39,16 @@ login.addEventListener('click', function(event) {
             localStorage.setItem('loggedIn', JSON.stringify(loggedIn))
             window.location.href = "./index.html";
         } else {
-            document.getElementById("result").innerHTML="Incorrect password"
+            document.getElementById("errorPass").innerHTML="Incorrect password"
+            document.getElementById("errorPass").style.color="red";
+            document.getElementById("logPassword").style.borderColor = "red";
         }
-    } else {
-        document.getElementById("result").innerHTML="Please, register"
+    } else if (username != ""){
+        document.getElementById("errorUsername").innerHTML = "Incorrect username or register";
+        document.getElementById("errorUsername").style.color="red";
+        document.getElementById("logUsername").style.borderColor = "red";
     }
-})
+}) 
 
 
 let eyeicon = document.getElementById("eyeicon")

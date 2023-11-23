@@ -10,41 +10,76 @@ register.addEventListener('click', function(event) {
 
     let isValid = true
 
-    var passRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*#?&.])[A-Za-z\d@$!%*#?&.]{8,16}$/;
+    var passRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[$!*#?.])[A-Za-z\d$!*#?.]{8,16}$/;
     var emailRegex = /^(?=.{8,16}@)[a-zA-Z0-9]+[.]?[a-zA-Z0-9]+[_]?@[a-z]+\.[a-z]{2,6}$/;
-    if (username=="" && email=="" && password=="" && confirmPassword=="") {
-        document.getElementById("result").innerHTML="Fill out the fields"
+    if (username=="") { 
+        document.getElementById("errorUsername").innerHTML = "Username is required";
+        document.getElementById("errorUsername").style.color = "red"
+        document.getElementById("regUsername").style.borderColor = "red";
         isValid=false
-    } else if (username=="") {
-        document.getElementById("result").innerHTML="Enter username";
-        isValid = false
-    } else if (username.length < 6) {
-        document.getElementById("result").innerHTML="Username must be at least 6 character";
-        isValid = false
-    } else if (email=="") {
-        document.getElementById("result").innerHTML="Enter email";
+    } else if (username.length<6 || username.length>16) {
+        document.getElementById("errorUsername").innerHTML = "Length of username must be in range 6 to 16";
+        document.getElementById("errorUsername").style.color = "red"
+        document.getElementById("regUsername").style.borderColor = "red";
+        isValid=false
+    } else {
+        document.getElementById("errorUsername").innerHTML = "";
+        document.getElementById("regUsername").style.borderColor = "greenyellow";
+        isValid=true
+    }
+
+    if (email=="") {
+        document.getElementById("errorEmail").innerHTML="Enter email";
+        document.getElementById("errorEmail").style.color = "red"
+        document.getElementById("regEmail").style.borderColor = "red"
         isValid = false
     } else if (!emailRegex.test(email)) {
-        document.getElementById("result").innerHTML="Enter a valid email address";
+        document.getElementById("errorEmail").innerHTML="Enter a valid email address";
+        document.getElementById("errorEmail").style.color = "red"
+        document.getElementById("regEmail").style.borderColor = "red"
         isValid = false;
-    }  else if (password=="") {
-        document.getElementById("result").innerHTML="Enter password";
-        isValid = false
+    } else {
+        document.getElementById("errorEmail").innerHTML = ""
+        document.getElementById("regEmail").style.borderColor = "greenyellow"
+        isValid = true
+    }       
+
+    if (password=="") {
+        document.getElementById("errorPass").innerHTML="Enter password";
+        document.getElementById("errorPass").style.color="red"
+        document.getElementById("regPassword").style.borderColor = "red"
+        isValid = false 
     } else if (password.length < 8) {
-        document.getElementById("result").innerHTML="Password must be at least 8 characters";
+        document.getElementById("errorPass").innerHTML="Password must be at least 8 characters";
+        document.getElementById("errorPass").style.color="red"
+        document.getElementById("regPassword").style.borderColor = "red"
         isValid = false
     } else if (!passRegex.test(password)) {
-        document.getElementById("result").innerHTML="Enter a valid password address";
+        document.getElementById("errorPass").innerHTML="Enter a valid password";
+        document.getElementById("errorPass").style.color="red"
+        document.getElementById("regPassword").style.borderColor = "red"
         isValid = false
-    } else if (confirmPassword=="") {
-        document.getElementById("result").innerHTML="Confirm password";
+    } else {
+        document.getElementById("errorPass").innerHTML="";
+        document.getElementById("regPassword").style.borderColor = "greenyellow"
+        isValid = true
+    }
+    
+    if (confirmPassword=="") {
+        document.getElementById("errorConfpass").innerHTML="Confirm password";
+        document.getElementById("errorConfpass").style.color = "red"
+        document.getElementById("confirmPass").style.borderColor = "red"
         isValid = false 
     } else if (password!==confirmPassword) {
-        document.getElementById("result").innerHTML="Password doesn't match";
+        document.getElementById("errorConfpass").innerHTML="Password doesn't match";
+        document.getElementById("errorConfpass").style.color = "red"
+        document.getElementById("confirmPass").style.borderColor = "red"
         isValid = false
     } else if (localStorage.getItem(username)) {
-        document.getElementById("result").innerHTML="Username is already taken"
-        isValid=false
+        document.getElementById("errorConfpass").innerHTML="Username is already taken"
+        document.getElementById("errorConfpass").style.color = "red"
+        document.getElementById("confirmPass").style.borderColor = "red"
+        isValid=true
     }
     
     let user = {
