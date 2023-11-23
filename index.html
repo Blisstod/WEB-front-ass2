@@ -69,7 +69,11 @@
                     my-2">
                     <a 
                     class="text-light text-decoration-none d-block w-100 fs-3" 
-                    href="./basket.html"><i class="bi bi-cart"></i></a>
+                    href="./basket.html">
+                    <div class="basketicon">
+                        <i class=" fa fa-shopping-cart"></i>
+                    <span id="basketItemCount" class="basket-item-count">0</span>
+                    </div></a>
                     </li>
                     <li 
                     class="nav-item
@@ -255,50 +259,6 @@
             </div>
         </div>
     </div>
-
-    <script>
-        function addToBasket(planName, price) {
-            const item = `${planName}-${price}`;
-            const currentBasket = localStorage.getItem('basket') || "";
-            localStorage.setItem('basket', currentBasket ? `${currentBasket},${item}` : item);
-            alert(`${planName} added to basket`);
-        }
-    </script>
-    
-    
-
-    <!-- subscribeButton -->
-
-    <div id="popup" class="popup">
-        <div class="popup-content">
-            <span class="close" id="closePopup">&times;</span>
-            <h2>Subscribe Form</h2>
-            <form id="popupForm" action = "/">
-                <div class = "form-element">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone">
-                    <div class = "error"></div>
-                </div>
-                <div class = "form-element">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email">
-                    <div class = "error"></div>       
-                </div>            
-                <div class = "form-element">
-                    <label for="cardNumber">Card Number</label>
-                    <input type="text" id="cardNumber" name="cardNumber">
-                    <div class = "error"></div>
-                </div>
-                <div class = "form-element">
-                    <label for="cvv">CVV</label>
-                    <input type="text" id="cvv" name="cvv">
-                    <div class = "error"></div>
-                </div>
-                <button type="submit">Submit</button>
-            </form>
-        </div>
-    </div>
-    <div id="overlay" class="overlay"></div>
     
     <footer id="contacts"
     class="bg-dark p-4 text-center
@@ -341,6 +301,7 @@
     <script src="js/azat.js"></script>
     <script src="js/dias.js"></script>
     <script src="js/ernur.js"></script>
+    <script src="js/basket.js"></script>
 
 </body>
 </html>

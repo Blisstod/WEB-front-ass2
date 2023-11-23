@@ -1,3 +1,6 @@
+@import url(bootstrap/bootstrap-reboot.css);
+@import url(bootstrap/bootstrap.css);
+
 .basket-body {
     padding: 20px;
 }
@@ -15,20 +18,10 @@
     width: 60%;
 }
 
-.close-button {
+button.btn-close {
     position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 30px;
-    height: 30px;
-    background-color: #333;  /* Adjust the color as per your design */
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-.close-button:hover {
-    background-color: #ff3860;  /* Adjust the hover color as per your design */
+    top: 15px;
+    right: 15px;
 }
 
 .basket-header h1{
