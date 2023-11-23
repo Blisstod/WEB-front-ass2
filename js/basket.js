@@ -44,9 +44,16 @@ function updateBasketDisplay() {
 			basketList.appendChild(listItem);
 			total += parseFloat(price);
 		}
+		total = parseFloat(total.toFixed(2));
+		totalElement.textContent = total;
 	});
-
 	totalElement.textContent = total;
+
+	if (basket.length > 6) {
+        basketList.classList.add('scrollable-basket');
+    } else {
+        basketList.classList.remove('scrollable-basket');
+    }
 }
 
 function removeAll(){

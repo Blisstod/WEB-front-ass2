@@ -85,6 +85,15 @@ button.btn-close {
     background-color: #45a049;
 }
 
+#basket-list {
+    max-height: 400px; 
+    overflow-y: auto;
+}
+.scrollable-basket {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
 
 .popup {
     display: none;
@@ -176,3 +185,52 @@ button.btn-close {
     background: rgba(0, 0, 0, 0.7);
     z-index: 999;
 }
+
+@media only screen and (max-width: 620px) {
+    .basket-container {
+        width: 95%;
+        padding: 10px;
+    }
+}
+
+@media only screen and (max-width: 620px) {
+    .basket-title, .list-group-item {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 620px) {
+    .basket-button, .popup-content input {
+        font-size: 16px;
+        padding: 8px;
+    }
+}
+
+@media only screen and (max-width: 620px) {
+    .popup {
+        width: 90%;
+        padding: 20px;
+    }
+}
+
+@media only screen and (max-width: 620px) {
+    .list-group-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media only screen and (max-width: 620px) {
+    button.btn-close, .remove-all {
+        font-size: larger;
+    }
+}
+
+@media only screen and (max-width: 620px) {
+    .checkout {
+        font-size: 18px;
+    }
+}
+
+
+
