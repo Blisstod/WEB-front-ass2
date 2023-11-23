@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', window.formValidation = function() {
     const checkoutButton = document.getElementById('checkoutButton'); // Select all buttons with the "button" class
     const popup = document.getElementById('popup');
     const closeButton = document.getElementById('closePopup');
@@ -7,10 +7,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (checkoutButton) {
         checkoutButton.addEventListener('click', function () {
-            popup.style.display = 'block';
-            overlay.style.display = 'block';
+                popup.style.display = 'block';
+                overlay.style.display = 'block';
         });
-    } 
+    }
 
     closeButton.addEventListener('click', function () {
         popup.style.display = 'none';

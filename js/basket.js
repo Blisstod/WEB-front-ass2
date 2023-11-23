@@ -1,7 +1,32 @@
 const basketList = document.getElementById('basket-list');
 const totalElement = document.getElementById('total');
+const checkoutButton = document.getElementById('checkoutButton');
+
+function updateBasketItemCount() {
+    const basket = localStorage.getItem('basket');
+    const itemCount = basket ? basket.split(',').length : 0;
+    const itemCountElement = document.getElementById('basketItemCount');
+    if (itemCountElement) {
+        itemCountElement.textContent = itemCount;
+    }
+}
+
+function addToBasket(planName, price) {
+	const item = `${planName}-${price}`;
+	const currentBasket = localStorage.getItem('basket') || "";
+	localStorage.setItem('basket', currentBasket ? `${currentBasket},${item}` : item);
+	alert(`${planName} added to basket`);
+	updateBasketItemCount();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    updateBasketItemCount();
+});
 
 function updateBasketDisplay() {
+	if (!localStorage.getItem('basket')){
+		checkoutButton.disabled = true;
+	}
 	basketList.innerHTML = '';
 	const basket = (localStorage.getItem('basket') || "").split(',');
 	let total = 0;
@@ -27,7 +52,7 @@ function updateBasketDisplay() {
 function removeAll(){
 	localStorage.removeItem('basket');
 	updateBasketDisplay();
-}	
+}
 
 function removeFromBasket(index) {
 	let basket = (localStorage.getItem('basket') || "").split(',');
@@ -36,7 +61,7 @@ function removeFromBasket(index) {
 	updateBasketDisplay();
 }
 
-document.getElementById('checkoutButton').addEventListener('click', () => {
+checkoutButton.addEventListener('click', () => {
 	if(localStorage.getItem('basket')) {
 		localStorage.clear();
 		updateBasketDisplay();
@@ -47,6 +72,6 @@ document.getElementById('checkoutButton').addEventListener('click', () => {
 
 updateBasketDisplay();
 
-$('#closeButton').on('click', function() {
+$('#basketClose').on('click', function() {
     window.location.href = 'index.html';
 });
